@@ -18,23 +18,42 @@ TEEA 登录页面演示项目。基于 Figma 设计的移动端优先登录/引�
 
 ```
 src/
-├── assets/          # 图片资源（图标、背景、插图）
-├── components/      # 公共组件
-│   ├── index.ts           # 组件导出入口
-│   ├── PageContainer.tsx  # 页面容器组件
-│   ├── AuthInput.tsx      # 认证输入框组件
-│   ├── PrimaryButton.tsx  # 主按钮组件
-│   ├── SecondaryButton.tsx # 次按钮组件
-│   └── SocialLoginSection.tsx # 社交登录组件
-├── pages/           # 页面组件
-│   ├── WelcomeScreen.tsx   # 欢迎/引导页面
-│   ├── LoginScreen.tsx     # 登录页面
-│   └── RegisterScreen.tsx  # 注册页面
-├── styles/          # 样式配置
-│   └── theme.ts          # Ant Design 主题配置
-├── App.tsx          # 主应用组件（ConfigProvider）
-├── main.tsx         # 入口文件
-└── index.css        # 全局样式（Tailwind）
+├── assets/              # 图片资源（图标、背景、插图）
+├── components/          # 公共组件
+│   ├── auth-input/
+│   │   └── index.tsx          # 认证输入框组件
+│   ├── page-container/
+│   │   └── index.tsx          # 页面容器组件
+│   ├── primary-button/
+│   │   └── index.tsx          # 主按钮组件
+│   ├── secondary-button/
+│   │   └── index.tsx          # 次按钮组件
+│   └── social-login-section/
+│       └── index.tsx          # 社交登录组件
+├── pages/               # 页面组件
+│   ├── welcome-screen/
+│   │   └── index.tsx          # 欢迎/引导页面
+│   ├── login-screen/
+│   │   └── index.tsx          # 登录页面
+│   └── register-screen/
+│       └── index.tsx          # 注册页面
+├── styles/              # 样式配置
+│   └── theme.ts               # Ant Design 主题配置
+├── App.tsx              # 主应用组件（ConfigProvider）
+├── main.tsx             # 入口文件
+└── index.css            # 全局样式（Tailwind）
+```
+
+## 路径别名
+
+项目配置了 `@` 路径别名指向 `src` 目录：
+
+```typescript
+// 使用示例
+import AuthInput from "@/components/auth-input";
+import PrimaryButton from "@/components/primary-button";
+import WelcomeScreen from "@/pages/welcome-screen";
+import { COLORS } from "@/styles/theme";
 ```
 
 ## 公共组件

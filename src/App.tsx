@@ -1,9 +1,9 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ConfigProvider } from "antd";
 import { antdTheme } from "@/styles/theme";
-import WelcomeScreen from "@/pages/WelcomeScreen";
-import LoginScreen from "@/pages/LoginScreen";
-import RegisterScreen from "@/pages/RegisterScreen";
+import WelcomeScreen from "@/pages/welcome-screen";
+import LoginScreen from "@/pages/login-screen";
+import RegisterScreen from "@/pages/register-screen";
 
 function App() {
     return (

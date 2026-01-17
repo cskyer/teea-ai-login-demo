@@ -1,18 +1,16 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "antd";
-import {
-    PageContainer,
-    SocialLoginSection,
-    AuthInput,
-    PrimaryButton,
-    SecondaryButton
-} from "@/components";
+import PageContainer from "@/components/page-container";
+import SocialLoginSection from "@/components/social-login-section";
+import AuthInput from "@/components/auth-input";
+import PrimaryButton from "@/components/primary-button";
+import SecondaryButton from "@/components/secondary-button";
 import bgObjects from "@/assets/bg-objects.png";
 
-const { Title, Text, Link } = Typography;
+const { Title, Text } = Typography;
 
-const LoginScreen: FC = () => {
+const RegisterScreen: FC = () => {
     const navigate = useNavigate();
 
     return (
@@ -21,7 +19,7 @@ const LoginScreen: FC = () => {
             <div className="absolute backdrop-blur-[35px] h-full left-0 top-0 w-full" />
 
             {/* Background decorative objects */}
-            <div className="absolute h-[1431px] left-[-364px] top-[-356px] w-[1113px]">
+            <div className="absolute h-[1417px] left-[-320px] top-[-356px] w-[1069px]">
                 <img alt="" className="w-full h-full object-contain" src={bgObjects} />
             </div>
 
@@ -37,50 +35,37 @@ const LoginScreen: FC = () => {
                         marginBottom: 0
                     }}
                 >
-                    Login here
+                    Create Account
                 </Title>
                 <Text
                     style={{
                         display: "block",
-                        fontSize: 20,
-                        fontWeight: 600,
+                        fontSize: 14,
+                        fontWeight: 500,
                         color: "black",
-                        marginTop: 41,
+                        marginTop: 21,
                         fontFamily: "'Poppins', sans-serif",
-                        lineHeight: 1.4
+                        lineHeight: 1.6
                     }}
                 >
-                    Welcome back you've
-                    <br />
-                    been missed!
+                    Create an account so you can explore all the existing jobs
                 </Text>
             </div>
 
             {/* Form */}
-            <div className="absolute flex flex-col gap-[30px] items-end left-[31px] right-[40px] top-[302px]">
+            <div className="absolute flex flex-col gap-[53px] left-[31px] right-[40px] top-[243px]">
                 {/* Input fields */}
-                <div className="flex flex-col gap-[29px] w-full">
+                <div className="flex flex-col gap-[26px] w-full">
                     <AuthInput type="email" placeholder="Email" focused />
                     <AuthInput type="password" placeholder="Password" />
+                    <AuthInput type="password" placeholder="Confirm Password" />
                 </div>
-
-                {/* Forgot password */}
-                <Link
-                    style={{
-                        color: "#1f41bb",
-                        fontSize: 14,
-                        fontWeight: 600,
-                        fontFamily: "'Poppins', sans-serif"
-                    }}
-                >
-                    Forgot your password?
-                </Link>
 
                 {/* Action buttons */}
                 <div className="flex flex-col gap-[30px] w-full">
-                    <PrimaryButton block>Sign in</PrimaryButton>
-                    <SecondaryButton block onClick={() => navigate("/register")}>
-                        Create new account
+                    <PrimaryButton block>Sign up</PrimaryButton>
+                    <SecondaryButton block onClick={() => navigate("/login")}>
+                        Already have an account
                     </SecondaryButton>
                 </div>
             </div>
@@ -91,4 +76,4 @@ const LoginScreen: FC = () => {
     );
 };
 
-export default LoginScreen;
+export default RegisterScreen;

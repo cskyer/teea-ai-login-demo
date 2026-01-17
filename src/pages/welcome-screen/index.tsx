@@ -1,7 +1,9 @@
 import type { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { Typography } from "antd";
-import { PageContainer, PrimaryButton, SecondaryButton } from "@/components";
+import PageContainer from "@/components/page-container";
+import PrimaryButton from "@/components/primary-button";
+import SecondaryButton from "@/components/secondary-button";
 import ellipse1 from "@/assets/ellipse1.png";
 import ellipse2 from "@/assets/ellipse2.png";
 import floor from "@/assets/floor.png";
